@@ -1,0 +1,115 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#game-wrapper {
+  position: relative;
+  height: 600px;
+  width: 340px;
+  border: 1px solid black;
+}
+
+#game-wrapper #game {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#game-wrapper #game::-webkit-scrollbar {
+  display: none;
+}
+
+#game-wrapper #game > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25%;
+}
+
+#game-wrapper #game > div input {
+  width: 25%;
+  -webkit-box-flex: 25%;
+      -ms-flex: 25% 0 0px;
+          flex: 25% 0 0;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+#game-wrapper #game > div input.safe {
+  background-color: #000000;
+  border: 1px solid #ffffff;
+}
+
+#game-wrapper #game > div input.clicked {
+  background-color: #746aff;
+  border: 1px solid #ffffff;
+}
+
+#game-wrapper #game #deathScreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-color: #af0000;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #ffffff;
+}
+
+#game-wrapper #game #deathScreen #restartGame {
+  cursor: pointer;
+  color: #af0000;
+  background-color: #ffffff;
+  padding: 12px;
+}
+
+#game-wrapper #score {
+  position: absolute;
+  z-index: 5;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ffffff;
+  padding: 12px;
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 99px;
+  pointer-events: none;
+  display: block;
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+/*# sourceMappingURL=style.css.map */

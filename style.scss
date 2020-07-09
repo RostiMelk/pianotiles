@@ -1,0 +1,86 @@
+$safe-tile: #000000;
+$dead-tile: #ffffff;
+$clicked-tile: #746aff;
+$death: #af0000;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-wrapper {
+  position: relative;
+  height: 600px;
+  width: 340px;
+  border: 1px solid black;
+  #game {
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    transform: rotate(180deg);
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    > div {
+      display: flex;
+      height: 25%;
+      input {
+        width: 25%;
+        flex: 25% 0 0;
+        background-color: $dead-tile;
+        border: 1px solid $safe-tile;
+        cursor: pointer;
+        &.safe {
+          background-color: $safe-tile;
+          border: 1px solid $dead-tile;
+        }
+        &.clicked {
+          background-color: $clicked-tile;
+          border: 1px solid $dead-tile;
+        }
+      }
+    }
+    #deathScreen {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      transform: rotate(180deg);
+      background-color: $death;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: $dead-tile;
+      #restartGame {
+        cursor: pointer;
+        color: $death;
+        background-color: $dead-tile;
+        padding: 12px;
+      }
+    }
+  }
+  #score {
+    position: absolute;
+    z-index: 5;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $dead-tile;
+    padding: 12px;
+    height: auto;
+    border: 2px solid $safe-tile;
+    border-radius: 99px;
+    pointer-events: none;
+    display: block;
+    margin: auto;
+    width: fit-content;
+  }
+}
